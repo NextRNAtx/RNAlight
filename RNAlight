@@ -129,9 +129,9 @@ if not (os.path.exists(tmp_dir)):
 # Convert fasta file to tab format
 tab_tmp = prefix + ".txt"
 if RNA:
-    fa2tab = "seqkit seq --dna2rna " + query_file +" | seqkit fx2tab | awk '{print $1\"\t\"toupper($2)}' > " + os.path.join(tmp_dir,tab_tmp)
+    fa2tab = "/home/abartlett/.conda/envs/RNAlight/bin/seqkit seq --dna2rna " + query_file +" | seqkit fx2tab | awk '{print $1\"\t\"toupper($2)}' > " + os.path.join(tmp_dir,tab_tmp)
 else:
-    fa2tab = "seqkit fx2tab " + query_file + " | awk '{print $1\"\t\"toupper($2)}' > " + os.path.join(tmp_dir,tab_tmp)
+    fa2tab = "/home/abartlett/.conda/envs/RNAlight/bin/seqkit fx2tab " + query_file + " | awk '{print $1\"\t\"toupper($2)}' > " + os.path.join(tmp_dir,tab_tmp)
 
 os.system(fa2tab)
 
